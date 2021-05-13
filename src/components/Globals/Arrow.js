@@ -9,9 +9,9 @@ const Arrow = styled.div`
   display: inline-block;
   padding: 30px;
   transform: rotate(45deg);
-  animation: blinking 3s ease-in-out infinite;
-  position: relative;
-
+  animation: blinking 2.5s ease-in-out infinite;
+  
+    
   @keyframes blinking {
     50% {
       opacity: 0;

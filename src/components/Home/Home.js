@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { setColor, setFlex, setRem } from "../../styles";
 import Section from "../Globals/Section";
 import Arrow from "../Globals/Arrow";
+import jsxToString from 'jsx-to-string';
+
 
 const Home = () => {
   return (
@@ -102,6 +104,26 @@ const Home = () => {
             <p>
             The range of elements processed by filter() is set before the first invocation of callbackFn. Elements which are appended to the array (from callbackFn) after the call to filter() begins will not be visited by callbackFn. If existing elements of the array are deleted in the same way they will not be visited.  
             </p>
+            <a href="#mapFilter3"><Arrow color={setColor.dark} /></a>
+          </MapFilterWrapper>
+        </Section>
+      </SectionWrapper>
+      <SectionWrapper>
+        <Section id="mapFilter3" color="#dbcc80">
+          <MapFilterWrapper>
+            <h2>Array.prototype.filter() example</h2>
+            <p>
+                Snippet from Matt-s-Motivator: <a href="https://github.com/DabTheMatt/Matt-s-Motivator/blob/master/src/App3.js" target="_blank">src/App3.js (line: 115)
+                </a></p>
+            <code>
+            
+                <div>delTask = (id) => &#123;</div>
+                <div> const delActivities = this.state.tasks.filter((task) => id !== task.id);</div>
+                <div>this.setState&#40;&#123;tasks: &#91;...delActivities&#93;&#125;&#41;&#59;</div>
+                <div>&#125;&#59;</div>
+            </code>
+            <h3>explanation in my words</h3>
+            <p>The <span>delTask</span> ​​function creates a new array based on the <span>tasks</span> array stored in the component state. The <span>delActivities</span> table will contain all the elements that will pass the test of the filter method (whose id will be different from the id passed to the function).Then this.setState will overwrite the <span>tasks</span> array.</p>
             <Arrow color={setColor.dark} />
           </MapFilterWrapper>
         </Section>
@@ -110,12 +132,17 @@ const Home = () => {
   );
 };
 
+
+
 const HomeWrapper = styled.div`
   background: ${setColor.dark};
   color: ${setColor.light};
   height: 100vh;
   ${setFlex()};
   flex-direction: column;
+  a {
+      margin: 30px;
+  }
 `;
 
 const TitleWrapper = styled.h1`
@@ -124,9 +151,10 @@ const TitleWrapper = styled.h1`
 `;
 
 const SectionWrapper = styled.div`
-  min-height: 100vh;
+  height: auto;
   ${setFlex()};
   flex-direction: column;
+  
 `;
 
 const MapFilterWrapper = styled.div`
@@ -134,12 +162,17 @@ const MapFilterWrapper = styled.div`
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
+  height: 100%;
 
   code {
-    width: 80%;
+    width: 100%;
     font-size: ${setRem(20)};
     margin: 0 auto;
     margin-bottom: ${setRem(32)};
+    padding: ${setRem(16)};
+    background: ${setColor.lighten};
+    color: ${setColor.dark}
+
   }
   ul {
     margin-bottom: ${setRem(32)};

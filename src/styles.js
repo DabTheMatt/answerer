@@ -2,6 +2,7 @@ import {css} from "styled-components";
 
 export const setColor = {
     dark: "#003049",
+    darker: "#dbcc80",
     light: "#eae2b7",
     lighten: "#f6f2df",
     yellow: "#eae2b7",

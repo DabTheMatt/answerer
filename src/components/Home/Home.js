@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { setColor, setFlex, setRem } from "../../styles";
 import Section from "../Globals/Section";
 import Arrow from "../Globals/Arrow";
-import jsxToString from 'jsx-to-string';
-
+import jsxToString from "jsx-to-string";
 
 const Home = () => {
   return (
@@ -87,24 +86,39 @@ const Home = () => {
               Array ["exuberant", "destruction", "present"]
             </code>
             <p>
-            filter() calls a provided callbackFn function once for each element in an array, and constructs a new array of all the values for which callbackFn returns a value that coerces to true. callbackFn is invoked only for indexes of the array which have assigned values; it is not invoked for indexes which have been deleted or which have never been assigned values. Array elements which do not pass the callbackFn test are skipped, and are not included in the new array.
+              filter() calls a provided callbackFn function once for each
+              element in an array, and constructs a new array of all the values
+              for which callbackFn returns a value that coerces to true.
+              callbackFn is invoked only for indexes of the array which have
+              assigned values; it is not invoked for indexes which have been
+              deleted or which have never been assigned values. Array elements
+              which do not pass the callbackFn test are skipped, and are not
+              included in the new array.
             </p>
             <p>callbackFn is invoked with three arguments:</p>
             <ul>
-                <li>the value of the element</li>
-                <li>the index of the element</li>
-                <li>the Array object being traversed</li>
+              <li>the value of the element</li>
+              <li>the index of the element</li>
+              <li>the Array object being traversed</li>
             </ul>
             <p>
-            If a thisArg parameter is provided to filter, it will be used as the callback's this value. Otherwise, the value undefined will be used as its this value. The this value ultimately observable by callback is determined according to the usual rules for determining the this seen by a function.
+              If a thisArg parameter is provided to filter, it will be used as
+              the callback's this value. Otherwise, the value undefined will be
+              used as its this value. The this value ultimately observable by
+              callback is determined according to the usual rules for
+              determining the this seen by a function.
             </p>
+            <p>filter() does not mutate the array on which it is called.</p>
             <p>
-            filter() does not mutate the array on which it is called.
+              The range of elements processed by filter() is set before the
+              first invocation of callbackFn. Elements which are appended to the
+              array (from callbackFn) after the call to filter() begins will not
+              be visited by callbackFn. If existing elements of the array are
+              deleted in the same way they will not be visited.
             </p>
-            <p>
-            The range of elements processed by filter() is set before the first invocation of callbackFn. Elements which are appended to the array (from callbackFn) after the call to filter() begins will not be visited by callbackFn. If existing elements of the array are deleted in the same way they will not be visited.  
-            </p>
-            <a href="#mapFilter3"><Arrow color={setColor.dark} /></a>
+            <a href="#mapFilter3">
+              <Arrow color={setColor.dark} />
+            </a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -113,17 +127,100 @@ const Home = () => {
           <MapFilterWrapper>
             <h2>Array.prototype.filter() example</h2>
             <p>
-                Snippet from Matt-s-Motivator: <a href="https://github.com/DabTheMatt/Matt-s-Motivator/blob/master/src/App3.js" target="_blank">src/App3.js (line: 115)
-                </a></p>
+              Snippet from Matt-s-Motivator:{" "}
+              <a
+                href="https://github.com/DabTheMatt/Matt-s-Motivator/blob/master/src/App3.js"
+                target="_blank"
+              >
+                src/App3.js (line: 115)
+              </a>
+            </p>
             <code>
-            
-                <div>delTask = (id) => &#123;</div>
-                <div> const delActivities = this.state.tasks.filter((task) => id !== task.id);</div>
-                <div>this.setState&#40;&#123;tasks: &#91;...delActivities&#93;&#125;&#41;&#59;</div>
-                <div>&#125;&#59;</div>
+              <div>delTask = (id) => &#123;</div>
+              <div>
+                {" "}
+                const delActivities = this.state.tasks.filter((task) => id !==
+                task.id);
+              </div>
+              <div>
+                this.setState&#40;&#123;tasks:
+                &#91;...delActivities&#93;&#125;&#41;&#59;
+              </div>
+              <div>&#125;&#59;</div>
             </code>
             <h3>explanation in my words</h3>
-            <p>The <span>delTask</span> ​​function creates a new array based on the <span>tasks</span> array stored in the component state. The <span>delActivities</span> table will contain all the elements that will pass the test of the filter method (whose id will be different from the id passed to the function).Then this.setState will overwrite the <span>tasks</span> array.</p>
+            <p>
+              The <span>delTask</span> ​​function creates a new array based on
+              the <span>tasks</span> array stored in the component state. The{" "}
+              <span>delActivities</span> table will contain all the elements
+              that will pass the test of the filter method (whose id will be
+              different from the id passed to the function).Then this.setState
+              will overwrite the <span>tasks</span> array.
+            </p>
+            <Arrow color={setColor.dark} />
+          </MapFilterWrapper>
+        </Section>
+      </SectionWrapper>
+      <SectionWrapper>
+        <Section id="mapFilter4" color="#d2bf60">
+          <MapFilterWrapper>
+            <h2>Array.prototype.map() example</h2>
+            <p>
+              Snippet from Matt-s-Motivator:{" "}
+              <a
+                href="https://github.com/DabTheMatt/Matt-s-Motivator/blob/master/src/App3.js"
+                target="_blank"
+              >
+                src/App3.js (line: 174)
+              </a>
+            </p>
+            <code>
+              <div>const taskList = this.state.tasks.map((task) => &#40;</div>
+              <div>&#60;Tab</div>
+              <div> id=&#123;task.id&#125;</div>
+              <div>...</div>
+              <div>/&#62;</div>
+              <div>&#41;&#41;&#59;</div>
+            </code>
+            <h3>explanation in my words</h3>
+            <p>
+              Using the <span>map</span> method, I create the{" "}
+              <span>taskList</span> array. Iterating through the array, I create
+              a new component <span>Tab</span> for each <span>task</span>{" "}
+              element by sending to it needed props.
+            </p>
+            <p>
+              <span>Map</span> method is usually used to return an array in
+              which all the elements have been subjected to a given function.
+            </p>
+            <p>In this case, I think I need a better example :)</p>
+            <p>
+              The <span>Filter</span> method filters the provided array and returns a new
+              array containing only elements that match the specified criteria.
+            </p>
+
+            <p>
+              <span>Map</span> method returns a new array containing all elements that have
+              been subjected to the attached function.
+            </p>
+            <p>
+              I conclude that the <span>map</span> method is much more flexible because it
+              allows you to create filters when the <span>Filter</span> method won't let you
+              (for example) multiply every element of the array by 2 :)
+            </p>
+            <Arrow color={setColor.dark} />
+          </MapFilterWrapper>
+        </Section>
+      </SectionWrapper>
+      <SectionWrapper>
+        <Section id="mapFilter4" color="#003049">
+          <MapFilterWrapper>
+              <div className="lightText">
+                  <div></div>
+            <h1>why do you need a copy?</h1>
+            
+            
+            </div>
             <Arrow color={setColor.dark} />
           </MapFilterWrapper>
         </Section>
@@ -132,8 +229,6 @@ const Home = () => {
   );
 };
 
-
-
 const HomeWrapper = styled.div`
   background: ${setColor.dark};
   color: ${setColor.light};
@@ -141,8 +236,10 @@ const HomeWrapper = styled.div`
   ${setFlex()};
   flex-direction: column;
   a {
-      margin: 30px;
+    margin: 30px;
   }
+  
+  
 `;
 
 const TitleWrapper = styled.h1`
@@ -154,6 +251,12 @@ const SectionWrapper = styled.div`
   height: auto;
   ${setFlex()};
   flex-direction: column;
+  
+      
+  
+      .lightText {
+      color: ${setColor.light}
+  }
   
 `;
 
@@ -171,8 +274,7 @@ const MapFilterWrapper = styled.div`
     margin-bottom: ${setRem(32)};
     padding: ${setRem(16)};
     background: ${setColor.lighten};
-    color: ${setColor.dark}
-
+    color: ${setColor.dark};
   }
   ul {
     margin-bottom: ${setRem(32)};

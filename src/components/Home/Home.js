@@ -8,12 +8,27 @@ import jsxToString from "jsx-to-string";
 const Home = () => {
   return (
     <div>
-      <HomeWrapper>
+      <SectionWrapper>
+        <Section color="#003049" className="lightText">
+          
+          <MapFilterWrapper>
+          <div id="hello">
+          <p style={{fontSize: "20px", textAlign: "right", marginBottom: "-90px"}}>by DabTheMatt</p>
         <TitleWrapper>find the answer</TitleWrapper>
-        <a href="#mapFilter">
-          <Arrow color={setColor.light} />
-        </a>
-      </HomeWrapper>
+        <ul id="topics">
+          <a href="#mapFilter"><li>Map / Filter Methods Mystery</li></a>
+          <a href="#copy1"><li>why do you need a copy?</li></a>
+          <a href="#hiddenKey"><li>hidden key</li></a>
+          
+          
+          
+        </ul>
+        
+        </div>
+        </MapFilterWrapper>
+        
+        </Section>
+      </SectionWrapper>
       <SectionWrapper>
         <Section id="mapFilter">
           <MapFilterWrapper>
@@ -58,7 +73,7 @@ const Home = () => {
               <li>you're not using the array it returns; and/or</li>
               <li>you're not returning a value from the callback.</li>
             </ul>
-            
+            <a href="start">&#94;	hop to top</a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -114,7 +129,7 @@ const Home = () => {
               be visited by callbackFn. If existing elements of the array are
               deleted in the same way they will not be visited.
             </p>
-            
+            <a href="start">&#94;	hop to top</a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -153,6 +168,7 @@ const Home = () => {
               different from the id passed to the function).Then this.setState
               will overwrite the <span>tasks</span> array.
             </p>
+            <a href="start">&#94;	hop to top</a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -203,11 +219,12 @@ const Home = () => {
               allows you to create filters when the <span>Filter</span> method won't let you
               (for example) multiply every element of the array by 2 :)
             </p>
+            <a href="start">&#94;	hop to top</a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
       <SectionWrapper>
-        <Section id="copy1" color="#003049">
+        <Section id="copy1" color="#004266">
           <MapFilterWrapper>
               <div className="lightText">
                   <div></div>
@@ -215,6 +232,7 @@ const Home = () => {
             <p>React components has a built-in state object. The state object is where you store property values that belongs to the component. When the state object changes, the component re-renders.</p>
             <p>To control when re-rendering happens, you need to make sure to use the <span>this.setState&#40;	&#41;</span>	method. It allows component to know that its state has changed, so it can call the render&#40;	&#41;	 method again.</p>
             </div>
+            <a href="start">&#94;	hop to top</a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -255,11 +273,12 @@ const Home = () => {
             
             
             </div>
+            <a className="yellow" href="start">&#94;	hop to top</a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
       <SectionWrapper>
-        <Section id="copy2" color="#adb5bd">
+        <Section id="hiddenKey" color="#adb5bd">
           <MapFilterWrapper>
           <div >
             <h1>hidden key</h1>
@@ -305,6 +324,7 @@ const Home = () => {
             
             
             </div>
+            <a href="start">&#94;	hop to top</a>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -316,20 +336,25 @@ const Home = () => {
 const HomeWrapper = styled.div`
   background: ${setColor.dark};
   color: ${setColor.light};
-  height: 100vh;
-  ${setFlex()};
+  height: 90vh;
+  
+
+  ${setFlex({align:"flex-start"})};
   flex-direction: column;
+  padding-left: ${setRem(150)};
   a {
     margin: 30px;
     align-self: center;
   }
   
-  
+ 
 `;
 
 const TitleWrapper = styled.h1`
-  font-size: ${setRem(64)};
+  font-size: ${setRem(100)};
   font-weight: 100;
+  color: ${setColor.light};
+  margin-top: ${setRem(64)}
 `;
 
 const SectionWrapper = styled.div`
@@ -361,6 +386,7 @@ const SectionWrapper = styled.div`
     background: ${setColor.lighten};
     color: ${setColor.dark};
     text-align: left;
+    
   }
 
   
@@ -374,6 +400,16 @@ const MapFilterWrapper = styled.div`
   height: 100%;
   align-self: left;
 
+  a {
+    text-decoration: none;
+    margin-bottom: 2rem;
+    color: ${setColor.red}
+  }
+  a:hover {
+    color: ${setColor.orange}
+  }
+
+  
   code {
     width: 100%;
     font-size: ${setRem(20)};
@@ -389,6 +425,35 @@ const MapFilterWrapper = styled.div`
 
   span {
     font-weight: 900;
+  }
+
+  #topics {
+    list-style: none;
+
+    li {
+      margin-bottom: ${setRem(12)};
+      margin-left: 0px;
+      
+    }
+
+    
+
+    a {
+      text-decoration: none;
+      color: ${setColor.lighten};
+      font-size: ${setRem(24)};
+      
+      
+    }
+    
+    
+    a:hover {
+      color: ${setColor.orange};
+    }
+    }
+  }
+  #hello {
+    height: 100vh;
   }
 `;
 

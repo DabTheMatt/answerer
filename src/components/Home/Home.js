@@ -213,18 +213,103 @@ const Home = () => {
         </Section>
       </SectionWrapper>
       <SectionWrapper>
-        <Section id="mapFilter4" color="#003049">
+        <Section id="copy1" color="#003049">
           <MapFilterWrapper>
               <div className="lightText">
                   <div></div>
             <h1>why do you need a copy?</h1>
-            
-            
+            <p>React components has a built-in state object. The state object is where you store property values that belongs to the component. When the state object changes, the component re-renders.</p>
+            <p>To control when re-rendering happens, you need to make sure to use the <span>this.setState&#40;	&#41;</span>	method. It allows component to know that its state has changed, so it can call the render&#40;	&#41;	 method again.</p>
             </div>
             <Arrow color={setColor.dark} />
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
+      <SectionWrapper>
+        <Section id="copy2" color="#00507a">
+          <MapFilterWrapper>
+          <div className="lightText">
+            <h2>changing state ant setState&#40;	&#41;	 method example</h2>
+            <p style={{textAlign: "center"}}>
+              Snippet from Ping:{" "}
+              
+              <a style={{color: "white"}}
+                href="https://github.com/DabTheMatt/ping/blob/main/src/components/Screen.js"
+                target="_blank"
+              >
+                src/App3.js (line: 21)
+              </a>
+            </p><div id="onBlue">
+            <code >
+              <div>componentDidMount = &#40;&#41; => &#40;</div>
+              <div>let tempArray = this.state.ping.split&#40;" "&#41;</div>
+              <div> this.setState&#40;&#123;	</div>
+              <div>pingArray: tempArray,</div>
+              <div>&#125;&#41;</div>
+              <div>&#41;&#59;</div>
+            </code>
+            </div>
+            <h3>explanation in my words</h3>
+            <p>
+            After mounting the component&#40;	<span>componentDidMount&#40;&#41;&#41;</span>, I assign to <span>tempArray</span> a string broken into fragments using the <span>split&#40;&#41;</span>method, derived from the ping property value derived from the component state. Then, using <span>this.setState&#40;&#41;</span>) method, I assign the value of the <span>tempArray</span> variable to the <span>pingArray</span> state property.
+            </p>
+            <p>
+            I did an operation on the value of the state property by copying it and assigning it to the new state property.
+            </p>
+            <p>
+            When <span>this.setState&#40;&#41</span>; is executed, component knows that its state has been updated and re-renders.
+            </p>
+            
+            <a href="#">
+            <Arrow color={setColor.dark} />
+            </a>
+            </div>
+          </MapFilterWrapper>
+        </Section>
+      </SectionWrapper>
+      <SectionWrapper>
+        <Section id="copy2" color="#00507a">
+          <MapFilterWrapper>
+          <div className="lightText">
+            <h2>changing state ant setState&#40;	&#41;	 method example</h2>
+            <p style={{textAlign: "center"}}>
+              Snippet from Ping:{" "}
+              
+              <a style={{color: "white"}}
+                href="https://github.com/DabTheMatt/ping/blob/main/src/components/Screen.js"
+                target="_blank"
+              >
+                src/App3.js (line: 21)
+              </a>
+            </p><div id="onBlue">
+            <code >
+              <div>componentDidMount = &#40;&#41; => &#40;</div>
+              <div>let tempArray = this.state.ping.split&#40;" "&#41;</div>
+              <div> this.setState&#40;&#123;	</div>
+              <div>pingArray: tempArray,</div>
+              <div>&#125;&#41;</div>
+              <div>&#41;&#59;</div>
+            </code>
+            </div>
+            <h3>explanation in my words</h3>
+            <p>
+            After mounting the component&#40;	<span>componentDidMount&#40;&#41;&#41;</span>, I assign to <span>tempArray</span> a string broken into fragments using the <span>split&#40;&#41;</span>method, derived from the ping property value derived from the component state. Then, using <span>this.setState&#40;&#41;</span>) method, I assign the value of the <span>tempArray</span> variable to the <span>pingArray</span> state property.
+            </p>
+            <p>
+            I did an operation on the value of the state property by copying it and assigning it to the new state property.
+            </p>
+            <p>
+            When <span>this.setState&#40;&#41</span>; is executed, component knows that its state has been updated and re-renders.
+            </p>
+            
+            <a href="#">
+            <Arrow color={setColor.dark} />
+            </a>
+            </div>
+          </MapFilterWrapper>
+        </Section>
+      </SectionWrapper>
+      
     </div>
   );
 };
@@ -237,6 +322,7 @@ const HomeWrapper = styled.div`
   flex-direction: column;
   a {
     margin: 30px;
+    align-self: center;
   }
   
   
@@ -255,17 +341,36 @@ const SectionWrapper = styled.div`
       
   
       .lightText {
-      color: ${setColor.light}
+          width: 100%;
+      color: ${setColor.light};
+      
+
+      p {
+        text-align: left;
+      }
+      
   }
+  #onBlue {
+    width: 100%;
+    font-size: ${setRem(20)};
+    margin: 0 auto;
+    margin-bottom: ${setRem(32)};
+    padding: ${setRem(16)};
+    background: ${setColor.lighten};
+    color: ${setColor.dark};
+    text-align: left;
+  }
+
   
 `;
 
 const MapFilterWrapper = styled.div`
-  ${setFlex()};
+  ${setFlex({justify:"flex-start", align:"flex-start"})};
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
   height: 100%;
+  align-self: left;
 
   code {
     width: 100%;

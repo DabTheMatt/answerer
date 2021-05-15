@@ -10,6 +10,7 @@ const Arrow = styled.div`
   padding: 30px;
   transform: rotate(45deg);
   animation: blinking 2.5s ease-in-out infinite;
+  align-self: center;
   
     
   @keyframes blinking {

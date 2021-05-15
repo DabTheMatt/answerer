@@ -6,6 +6,7 @@ padding: ${setRem(32)};
 background: ${props => props.color};
 height: 100%;
 width: 100%;
+
 `;
 
 export default Section;

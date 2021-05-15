@@ -58,9 +58,7 @@ const Home = () => {
               <li>you're not using the array it returns; and/or</li>
               <li>you're not returning a value from the callback.</li>
             </ul>
-            <a href="#mapFilter2">
-              <Arrow color={setColor.dark} />
-            </a>
+            
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -116,9 +114,7 @@ const Home = () => {
               be visited by callbackFn. If existing elements of the array are
               deleted in the same way they will not be visited.
             </p>
-            <a href="#mapFilter3">
-              <Arrow color={setColor.dark} />
-            </a>
+            
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -157,7 +153,6 @@ const Home = () => {
               different from the id passed to the function).Then this.setState
               will overwrite the <span>tasks</span> array.
             </p>
-            <Arrow color={setColor.dark} />
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -208,7 +203,6 @@ const Home = () => {
               allows you to create filters when the <span>Filter</span> method won't let you
               (for example) multiply every element of the array by 2 :)
             </p>
-            <Arrow color={setColor.dark} />
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -221,7 +215,6 @@ const Home = () => {
             <p>React components has a built-in state object. The state object is where you store property values that belongs to the component. When the state object changes, the component re-renders.</p>
             <p>To control when re-rendering happens, you need to make sure to use the <span>this.setState&#40;	&#41;</span>	method. It allows component to know that its state has changed, so it can call the render&#40;	&#41;	 method again.</p>
             </div>
-            <Arrow color={setColor.dark} />
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
@@ -239,7 +232,7 @@ const Home = () => {
               >
                 src/App3.js (line: 21)
               </a>
-            </p><div id="onBlue">
+            </p><div className="onBlue">
             <code >
               <div>componentDidMount = &#40;&#41; => &#40;</div>
               <div>let tempArray = this.state.ping.split&#40;" "&#41;</div>
@@ -260,51 +253,57 @@ const Home = () => {
             When <span>this.setState&#40;&#41</span>; is executed, component knows that its state has been updated and re-renders.
             </p>
             
-            <a href="#">
-            <Arrow color={setColor.dark} />
-            </a>
+            
             </div>
           </MapFilterWrapper>
         </Section>
       </SectionWrapper>
       <SectionWrapper>
-        <Section id="copy2" color="#00507a">
+        <Section id="copy2" color="#adb5bd">
           <MapFilterWrapper>
-          <div className="lightText">
-            <h2>changing state ant setState&#40;	&#41;	 method example</h2>
-            <p style={{textAlign: "center"}}>
-              Snippet from Ping:{" "}
+          <div >
+            <h1>hidden key</h1>
+            <p>
+            In order to hide API_KEY in the Balance application I followed three steps:</p>
+<ul>
+  <li>in the src directory I created the .env file and then assigned the API_KEY used to the name preceded by REACT_APP_...</li><br/>
+  <li>in the .gitignore file, I excluded the .env file from commits
+</li><br/>
+  <li>in the What.js file that uses API_KEY, I got access to the key value through the process.env object</li>
+</ul>
+<p style={{textAlign: "center"}}>
+              Snippet from Balance:{" "}
               
               <a style={{color: "white"}}
-                href="https://github.com/DabTheMatt/ping/blob/main/src/components/Screen.js"
+                href="https://github.com/DabTheMatt/balance/blob/master/src/components/What/What.js"
                 target="_blank"
               >
-                src/App3.js (line: 21)
+                src/App3.js (line: 29)
               </a>
-            </p><div id="onBlue">
-            <code >
-              <div>componentDidMount = &#40;&#41; => &#40;</div>
-              <div>let tempArray = this.state.ping.split&#40;" "&#41;</div>
-              <div> this.setState&#40;&#123;	</div>
-              <div>pingArray: tempArray,</div>
-              <div>&#125;&#41;</div>
-              <div>&#41;&#59;</div>
-            </code>
-            </div>
-            <h3>explanation in my words</h3>
-            <p>
-            After mounting the component&#40;	<span>componentDidMount&#40;&#41;&#41;</span>, I assign to <span>tempArray</span> a string broken into fragments using the <span>split&#40;&#41;</span>method, derived from the ping property value derived from the component state. Then, using <span>this.setState&#40;&#41;</span>) method, I assign the value of the <span>tempArray</span> variable to the <span>pingArray</span> state property.
             </p>
-            <p>
-            I did an operation on the value of the state property by copying it and assigning it to the new state property.
-            </p>
-            <p>
-            When <span>this.setState&#40;&#41</span>; is executed, component knows that its state has been updated and re-renders.
-            </p>
+<h3>before</h3>
+<div className="onBlue">
+<code>
+  
+   <div>componentDidMount&#40;	&#41;	 &#123;	</div>
+    <div>Tabletop.init&#40;&#123;	</div>
+      <div>key: "s0m3th1ngs0m3th1ngs0m3th1ng"</div>
+      <div>....</div>
+      
+</code>
+</div>
+
+<h3>after</h3>
+<div className="onBlue">
+<code>
+<div>componentDidMount&#40;	&#41;	 &#123;	</div>
+    <div>Tabletop.init&#40;&#123;	</div>
+      <div>key: process.env.REACT_APP_VALUES_KEY,</div>
+      <div>....</div>
+</code>
+</div>
             
-            <a href="#">
-            <Arrow color={setColor.dark} />
-            </a>
+            
             </div>
           </MapFilterWrapper>
         </Section>
@@ -341,16 +340,19 @@ const SectionWrapper = styled.div`
       
   
       .lightText {
-          width: 100%;
+      width: 100%;
       color: ${setColor.light};
       
+      .codeDiv {
+        width: 100%;
+      }
 
       p {
         text-align: left;
       }
       
   }
-  #onBlue {
+  .onBlue {
     width: 100%;
     font-size: ${setRem(20)};
     margin: 0 auto;

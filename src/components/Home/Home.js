@@ -355,17 +355,19 @@ const TitleWrapper = styled.h1`
   font-weight: 100;
   color: ${setColor.light};
   margin-top: ${setRem(64)}
+  width: 100%;
 `;
 
 const SectionWrapper = styled.div`
   height: auto;
   ${setFlex()};
   flex-direction: column;
+  margin: 0 auto;
   
       
   
       .lightText {
-      width: 100%;
+      
       color: ${setColor.light};
       
       .codeDiv {
@@ -378,7 +380,7 @@ const SectionWrapper = styled.div`
       
   }
   .onBlue {
-    width: 100%;
+    
     font-size: ${setRem(20)};
     margin: 0 auto;
     margin-bottom: ${setRem(32)};
@@ -395,7 +397,7 @@ const SectionWrapper = styled.div`
 const MapFilterWrapper = styled.div`
   ${setFlex({justify:"flex-start", align:"flex-start"})};
   flex-direction: column;
-  width: 80%;
+  
   margin: 0 auto;
   height: 100%;
   align-self: left;
@@ -411,7 +413,7 @@ const MapFilterWrapper = styled.div`
 
   
   code {
-    width: 100%;
+    
     font-size: ${setRem(20)};
     margin: 0 auto;
     margin-bottom: ${setRem(32)};

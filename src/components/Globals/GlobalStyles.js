@@ -23,7 +23,7 @@ h1{
     margin-bottom:0.5em;
 }
 h2{
-    font-size: 2em;
+    font-size: 1.8em;
     margin-bottom:0.75em;
 }
 h3{
@@ -50,6 +50,8 @@ p{
     line-height: 1.5;
     margin: 0 0 1.5rem 0;
 }
+
+
 `;
 
 export default Globals;

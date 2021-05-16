@@ -18,9 +18,9 @@ const Home = () => {
           >
          
           </p>
-          <h1 style={{marginBottom:"26rem"}}><a href="https://github.com/DabTheMatt" target="_blank" style={{color:"grey", textDecoration:"none", fontSize: "1.4rem"}}>DabTheMatt</a> <br/>looks for an answers</h1>
+          <h1 style={{marginTop:"20vh"}}><a href="https://github.com/DabTheMatt" target="_blank" style={{color:"grey", textDecoration:"none", fontSize: "1.4rem", fontWeight:"lighter"}}>DabTheMatt</a> <br/>looks for an answers</h1>
           
-          <ul id="topics">
+          <ul id="topics" style={{marginTop:"10vh"}}>
             <a href="#mapFilter">
               <li>Map / Filter Methods Mystery</li>
             </a>
@@ -346,7 +346,7 @@ const Home = () => {
 export const Wrapper = styled.div`
 #hello {
     color: ${setColor.light};
-    height: 100vh;
+    height: 71vh;
 
 
     ul {

@@ -18,7 +18,7 @@ const Home = () => {
           >
          
           </p>
-          <h1><a href="https://github.com/DabTheMatt" target="_blank" style={{color:"grey", textDecoration:"none", fontSize: "2rem"}}>DabTheMatt</a> <br/>looks for an answers</h1>
+          <h1 style={{marginBottom:"26rem"}}><a href="https://github.com/DabTheMatt" target="_blank" style={{color:"grey", textDecoration:"none", fontSize: "1.4rem"}}>DabTheMatt</a> <br/>looks for an answers</h1>
           
           <ul id="topics">
             <a href="#mapFilter">
@@ -377,14 +377,23 @@ list-style: inside;
 margin-bottom: ${setRem(20)};
 }
 @media (max-width: 500px) {
-    padding: ${setRem(24)};
+    padding: 1rem;
+    h1 {
+        font-size: 2.8rem;
+    }
     h2 {
         font-size: 1.6rem;
+    }
+    a {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 800px) {
-    padding: ${setRem(64)};
+    padding: ${setRem(40)};
+    h1 {
+        font-size: 2.2rem;
+    }
     h2 {
         font-size: 1.6rem;
     }
@@ -392,6 +401,7 @@ margin-bottom: ${setRem(20)};
 
 a {
     text-decoration: none;
+    font-size: 1.3rem;
 }
 `;
 

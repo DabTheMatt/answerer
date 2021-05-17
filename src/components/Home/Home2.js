@@ -244,7 +244,7 @@ const Home = () => {
 
       <Section  style={{color:"lightgrey"}}id="copy2" color="#00507a">
         <div className="lightText">
-          <h2>changing state ant setState&#40; &#41; method example</h2>
+          <h2>changing state and this.setState&#40; &#41; method example</h2>
           <p style={{ textAlign: "center" }}>
             Snippet from Ping:{" "}
             <a

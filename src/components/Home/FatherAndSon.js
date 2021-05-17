@@ -69,6 +69,10 @@ const AppWrapper = styled.div`
   p {
     margin-bottom: 1rem;
   }
+
+  @media (max-width: 500px) {
+    padding: 1rem;
+}
 `;
 
 export default FatherAndSon;

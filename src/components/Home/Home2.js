@@ -366,7 +366,7 @@ const Home = () => {
           This is not the most intuitive method, but it becomes understandable after a few uses.
           </p>
           <p>
-          As an illustration to the above, As a Son, I am sending letters to the Father:
+          As an illustration to the above, Son is sending letters to the Father:
           </p>
           
       

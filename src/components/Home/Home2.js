@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { setColor, setFlex, setRem, media } from "../../styles";
-import Arrow from "../Globals/Arrow";
-import jsxToString from "jsx-to-string";
+import FatherAndSon from "./FatherAndSon";
 
 const Home = () => {
   return (
@@ -18,7 +17,7 @@ const Home = () => {
           >
          
           </p>
-          <h1 style={{marginTop:"20vh"}}><a href="https://github.com/DabTheMatt" target="_blank" style={{color:"grey", textDecoration:"none", fontSize: "1.4rem", fontWeight:"lighter"}}>DabTheMatt</a> <br/>looks for an answers</h1>
+          <h1 style={{marginTop:"20vh"}}><a href="https://github.com/DabTheMatt" target="_blank" style={{color:"grey", textDecoration:"none", fontSize: "1.4rem", fontWeight:"lighter"}}>DabTheMatt</a> <br/>looking for an answer</h1>
           
           <ul id="topics" style={{marginTop:"10vh"}}>
             <a href="#mapFilter">
@@ -29,6 +28,12 @@ const Home = () => {
             </a>
             <a href="#hiddenKey">
               <li>hidden key</li>
+            </a>
+            <a href="#family">
+              <li>family troubles</li>
+            </a>
+            <a href="#bibliography">
+              <li>bibliography</li>
             </a>
           </ul>
         </div>
@@ -338,6 +343,62 @@ const Home = () => {
         </div>
         <a href="#start">&#94; hop to top</a>
       </Section>
+      <Section id="family" color="#b7e4c7">
+      <div>
+          <h1>family troubles</h1>
+          <p>
+          React components implement a render() method that takes input data and returns what to display. This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by render() via this.props.
+          </p>
+          <p>
+          In addition to taking input data (accessed via this.props), a component can maintain internal state data (accessed via this.state). When a component’s state data changes, the rendered markup will be updated by re-invoking render().
+          </p>
+          <p>
+          Passing props from parent to child is usually straightforward, but forwarding the other way requires lifting state up.
+          </p>
+          <h2>my thoughts</h2>
+          <p>
+          To pass the state to the parent, we first need to pass the props (function) from the parent to the child.
+          </p>
+          <p>
+          Then we pass the value of state as the callback argument from child to parent.
+          </p>
+          <p>
+          This is not the most intuitive method, but it becomes understandable after a few uses.
+          </p>
+          <p>
+          As an illustration to the above, As a Son, I am sending letters to the Father:
+          </p>
+          
+      
+      <FatherAndSon />
+      <p style={{ textAlign: "center" }}>
+            FatherAndSon: {" "}
+            <a
+              style={{ color: "white" }}
+              href=""
+              target="_blank"
+            >
+              FatherAndSon.js
+            </a>
+          </p>
+    
+        </div>
+        <a href="#start">&#94; hop to top</a>
+      </Section>
+      <Section id="bibliography" color="#eae2b7">
+      
+        <h2>bibliography:</h2>
+        <ul>
+          <li><a href="https://reactjs.org/">reactjs.org</a></li>
+          <li><a href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">MDN Web Docs</a></li>
+          <li><a href="https://www.pluralsight.com/guides/react-communicating-between-components">Pluralsight.com</a></li>
+          <li><a href="https://dev.to/thepuskar/how-to-hide-your-api-keys-in-react-4k55">dev.to</a></li>
+          <li><a href="https://github.com/DabTheMatt">DabTheMatt GitHub</a></li>
+        </ul>
+        <a href="#start">&#94; hop to top</a>
+        
+        
+      </Section>
     </Wrapper>
   );
 };
@@ -422,6 +483,66 @@ width: 100%;
     line-height: ${setRem()};
     padding: ${setRem(16)};
 }
+`;
+
+class Father extends React.Component {
+  state = {
+    letters: 0,
+  };
+
+  letterReciver = () => {
+    this.setState({
+      letters: this.state.letters + 1,
+    });
+  };
+  render() {
+    return (
+      <div style={{ background: "#b7e4c7", padding: "1rem" }}>
+        <p>Father (reciving letters from Son)</p>
+        <p>Letters recived from Son: {this.state.letters}</p>
+        <Son letterReciver={this.letterReciver}></Son>
+      </div>
+    );
+  }
+}
+
+class Son extends React.Component {
+  state = {
+    letters: 0,
+  };
+
+  handleSend = () => {
+    this.setState({
+      letters: this.state.letters + 1,
+    });
+    this.props.letterReciver();
+  };
+  render() {
+    return (
+      <div style={{ background: "#95d5b2", padding: "1rem" }}>
+        <p>Son (sending letters)</p>
+        <button onClick={this.handleSend}>Send letter to Father</button>
+        <p>Letters send to Father: {this.state.letters} on the basis of the receipt :)</p>
+      </div>
+    );
+  }
+}
+
+const AppWrapper = styled.div`
+  height: 100%;
+  background: #d8f3dc;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: -5px 0px 20px rgba(0,0,0,0.5);
+
+  button {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
 `;
 
 export default Home;

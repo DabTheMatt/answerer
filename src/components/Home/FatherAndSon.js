@@ -72,6 +72,9 @@ const AppWrapper = styled.div`
 
   @media (max-width: 500px) {
     padding: 1rem;
+    button {
+        font-size: 1rem;
+    }
 }
 `;
 
